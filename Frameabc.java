@@ -1,4 +1,6 @@
 
+import java.awt.event.KeyEvent;
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
 /*
@@ -42,6 +44,7 @@ public class Frameabc extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         outx1 = new javax.swing.JTextField();
         outx2 = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -52,6 +55,7 @@ public class Frameabc extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Isikan data a,b dan c");
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Gesa Rizky Nugraha\\Pictures\\materi blog\\java\\35.abc\\gif.gif")); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -63,21 +67,39 @@ public class Frameabc extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel6.setText("c");
 
+        ina.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inaActionPerformed(evt);
             }
         });
+        ina.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inaKeyTyped(evt);
+            }
+        });
 
+        inb.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inb.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inbActionPerformed(evt);
             }
         });
+        inb.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                inbKeyTyped(evt);
+            }
+        });
 
+        inc.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         inc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 incActionPerformed(evt);
+            }
+        });
+        inc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                incKeyTyped(evt);
             }
         });
 
@@ -91,54 +113,53 @@ public class Frameabc extends javax.swing.JFrame {
         jLabel9.setText("X2");
 
         outx1.setEditable(false);
+        outx1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         outx2.setEditable(false);
+        outx2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(101, 101, 101)
+                        .addGap(91, 91, 91)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(62, 62, 62)
-                                .addComponent(inb, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(63, 63, 63)
-                                .addComponent(ina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel9))
-                                .addGap(54, 54, 54)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(inc)
-                                    .addComponent(outx1)
-                                    .addComponent(outx2)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel7)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(62, 62, 62)
+                            .addComponent(inb, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addGap(63, 63, 63)
+                            .addComponent(ina, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel8)
+                                .addComponent(jLabel9))
+                            .addGap(54, 54, 54)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(inc)
+                                .addComponent(outx1)
+                                .addComponent(outx2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel7))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -165,7 +186,7 @@ public class Frameabc extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(outx2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -174,8 +195,10 @@ public class Frameabc extends javax.swing.JFrame {
     private void inaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inaActionPerformed
         // TODO add your handling code here:
         if (ina.getText().equals("") || inb.getText().equals("") || inc.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksa = ina.getText();
             double inputa = Double.parseDouble(teksa);
             String teksb = inb.getText();
@@ -195,8 +218,10 @@ public class Frameabc extends javax.swing.JFrame {
     private void inbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inbActionPerformed
         // TODO add your handling code here:
         if (ina.getText().equals("") || inb.getText().equals("") || inc.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksa = ina.getText();
             double inputa = Double.parseDouble(teksa);
             String teksb = inb.getText();
@@ -216,8 +241,10 @@ public class Frameabc extends javax.swing.JFrame {
     private void incActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_incActionPerformed
         // TODO add your handling code here:
         if (ina.getText().equals("") || inb.getText().equals("") || inc.getText().equals("")) {
+            getToolkit().beep();
             JOptionPane.showMessageDialog(null, "isi semua data");
         } else {
+            DecimalFormat df = new DecimalFormat("#.##");
             String teksa = ina.getText();
             double inputa = Double.parseDouble(teksa);
             String teksb = inb.getText();
@@ -233,6 +260,30 @@ public class Frameabc extends javax.swing.JFrame {
             outx2.setText(outputx2);
         }
     }//GEN-LAST:event_incActionPerformed
+
+    private void inaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inaKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inaKeyTyped
+
+    private void inbKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_inbKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_inbKeyTyped
+
+    private void incKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_incKeyTyped
+        // TODO add your handling code here:
+        char karakter = evt.getKeyChar();
+        if (!(((karakter >= '0') && (karakter <= '9') || (karakter == KeyEvent.VK_BACK_SPACE) || (karakter == KeyEvent.VK_DELETE) || (karakter == '.')))) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_incKeyTyped
 
     /**
      * @param args the command line arguments
@@ -282,6 +333,7 @@ public class Frameabc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField outx1;
     private javax.swing.JTextField outx2;
     // End of variables declaration//GEN-END:variables
